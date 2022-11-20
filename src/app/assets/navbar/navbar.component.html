@@ -1,0 +1,18 @@
+<nav class="#546e7a blue-grey darken-1">
+    <div class="nav-wrapper">
+      <img src="https://cdn-icons-png.flaticon.com/512/5219/5219574.png" width="60" height="60">
+       <a href="#" class="brand-logo" >Fly Emirates</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">  
+         <!-- True -->
+        <li *ngIf="activeSession"><a routerLink="/admin">Usuario</a></li>  
+        <li *ngIf="activeSession"><a routerLink="/aeropuertos">Aeropuertos</a></li>  
+        <li *ngIf="activeSession"><a routerLink="/rutas">Rutas</a></li>
+        <li *ngIf="activeSession"><a routerLink="/vuelos">Vuelos</a></li>  
+        <!-- Sesion -->
+        <!-- False -->
+        <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarse</a></li>
+        <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+        <li *ngIf="activeSession"><a routerLink="/seguridad/logout"><i class="material-icons">exit_to_app</i></a></li>
+      </ul>  
+    </div>
+  </nav>

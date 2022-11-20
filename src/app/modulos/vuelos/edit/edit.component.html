@@ -1,0 +1,49 @@
+<div class="container">
+  <h3 class="center-align">Editar Vuelo</h3>
+   <form [formGroup]="fgValidacionEditVuelo" class="col s12" (ngSubmit)="editVuelo()">
+    <input formControlName="id" type="hidden" class="validate">
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="fecha_Inicio" type="text" class="validate">
+        <label class="active" for="fecha_Inicio">Fecha Inicio</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="hora_Inicio" type="text" class="validate">
+        <label class="active" for="hora_Inicio">Hora Inicio</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="fecha_Fin" type="text" class="validate">
+        <label class="active" for="fecha_Fin">Fecha Fin</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="hora_Fin" type="text" class="validate">
+        <label class="active" for="hora_Fin">Hora Fin</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="nombre_Piloto" type="text" class="validate">
+        <label class="active" for="nombre_Piloto">Nombre Piloto</label>
+      </div>
+    </div>     
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="asientos_Vendidos" type="text" class="validate">
+        <label class="active" for="asientos_Vendidos">Asientos Vendidos</label>
+      </div>
+      <div class="input-field col s6">
+        <select class="browser-default" formControlName="ruta" >
+          <option value="" disabled selected>Seleccione la Ruta</option>
+          <option *ngFor="let ruta of listadoRutas" value="{{ruta.origen}} - {{ruta.destino}}">{{ruta.origen}} - {{ruta.destino}}</option>
+        </select>
+      </div>  
+    </div>    
+        <div class="row center-align">
+            <button [disabled]="!fgValidacionEditVuelo.valid" class="btn waves-effect waves-light" type="submit" name="action">Editar
+            <i class="material-icons right">edit</i>
+          </button>
+        </div>
+      </form>
+ </div>

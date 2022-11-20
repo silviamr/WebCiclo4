@@ -1,0 +1,26 @@
+<div class="container">
+  <br>
+  <a routerLink="/rutas/create" class="btn">Registrar Rutas <i class="large material-icons">location_on</i></a>
+   <table class="table responsive" class="highlight">
+      <thead>
+        <tr>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>Tiempo Estimado</th>
+            <th>Acciones</th>
+        </tr>
+      </thead>
+   
+      <tbody>
+        <tr *ngFor="let p of listado">
+          <td>{{p.origen}}</td>
+          <td>{{p.destino}}</td>
+          <td>{{p.tiempo_Estimado}}</td>
+          <td>
+            <a routerLink="/rutas/edit/{{p.id}}" class="btn"><i class="large material-icons">edit</i></a>
+            <button class="btn red" (click)="deleteRuta(p.id)"><i class="large material-icons">delete</i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div> 
